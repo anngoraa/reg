@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Только ОБЩИЕ стили -->
+    <link rel="stylesheet" href="{% static 'login/css/main.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'login' %}" class="nav-link">Login</a>
+            <a href="{% url 'register' %}" class="nav-link">Register</a>
+        </div>
+    </nav>
+
+
+    {% block content %}{% endblock %}
+
+
+    <script src="{% static 'login/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
